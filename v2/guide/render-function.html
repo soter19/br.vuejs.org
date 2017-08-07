@@ -367,7 +367,7 @@
         
         
         <li>
-            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividada em Profundidade</a>
+            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
         </li>
     
         
@@ -391,7 +391,7 @@
         
         
         <li>
-            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transitioning State</a>
+            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições nos Dados</a>
         </li>
     
         
@@ -475,7 +475,7 @@
         
         
         <li>
-            <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+            <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
         </li>
     
         
@@ -499,7 +499,7 @@
         
         
         <li>
-            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
         </li>
     
         
@@ -511,7 +511,7 @@
         
         
         <li>
-            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderização Server-Side</a>
+            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
         </li>
     
         
@@ -523,7 +523,7 @@
         
         
         <li>
-            <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript Support</a>
+            <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
         </li>
     
         
@@ -641,7 +641,7 @@
 <p>Esse <em>template</em> não está passando uma boa sensação. Não é apenas extenso, ele inclusive duplica <code>&lt;slot&gt;&lt;/slot&gt;</code> para cada nível de cabeçalho, e teríamos que fazer o mesmo ao incluirmos um elemento <code>&lt;a&gt;</code>.</p>
 <p>Enquanto <em>templates</em> funcionam muito bem para a maioria dos componentes, está claro que este caso é uma exceção. Então vamos tentar reescrevê-lo usando uma função <code>render</code>:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'anchored-heading'</span>, &#123;</div><div class="line">  <span class="attr">render</span>: <span class="function"><span class="keyword">function</span> (<span class="params">createElement</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> createElement(</div><div class="line">      <span class="string">'h'</span> + <span class="keyword">this</span>.nivel,   <span class="comment">// nome do elemento (tag)</span></div><div class="line">      <span class="keyword">this</span>.$slots.default <span class="comment">// array de elementos-filho (children)</span></div><div class="line">    )</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">props</span>: &#123;</div><div class="line">    <span class="attr">nivel</span>: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</div><div class="line">      <span class="attr">required</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Muito mais simples! Mais ou menos. O código é menor, mas requer maior familiaridade com as propriedades de uma instância Vue. Neste caso, você precisa saber que quando você inclui elementos filho em seu componente, sem especificar um atributo <code>slot</code>, como o <code>Olá Mundo!</code> dentro de <code>anchored-heading</code>, esses elementos estão acessíveis na instância do componente através de <code>$slots.default</code>. Se você ainda não leu, <strong>é altamente recomendado que leia a seção da API de <a href="../api/#vm-slots">propriedades da instância</a> antes de se aprofundar em funções <code>render</code></strong>.</p>
+<p>Muito mais simples! Mais ou menos. O código é menor, mas requer maior familiaridade com as propriedades de uma instância Vue. Neste caso, você precisa saber que quando você inclui elementos filho em seu componente, sem especificar um atributo <code>slot</code>, como o <code>Olá Mundo!</code> dentro de <code>anchored-heading</code>, esses elementos estão acessíveis na instância do componente através de <code>$slots.default</code>. Se você ainda não leu, <strong>é altamente recomendado que leia a seção da API de <a href="../api/#Instance-Properties">propriedades da instância</a> antes de se aprofundar em funções <code>render</code></strong>.</p>
 <h2 id="Parametros-para-createElement"><a href="#Parametros-para-createElement" class="headerlink" title="Parâmetros para createElement"></a>Parâmetros para <code>createElement</code></h2><p>A segunda coisa com a qual você precisa se familiarizar é como utilizar os recursos disponíveis em <em>templates</em> na função <code>createElement</code>. Estes são os parâmetros que <code>createElement</code> aceita:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// @returns &#123;VNode&#125;</span></div><div class="line">createElement(</div><div class="line">  <span class="comment">// &#123;String | Object | Function&#125;</span></div><div class="line">  <span class="comment">// Um nome de elemento (tag) HTML, um objeto com opções de componente,</span></div><div class="line">  <span class="comment">// ou uma função retornando um dentre os anteriores. Requerido.</span></div><div class="line">  <span class="string">'div'</span>,</div><div class="line"></div><div class="line">  <span class="comment">// &#123;Object&#125;</span></div><div class="line">  <span class="comment">// Um objeto de dados (chave: valor) correspondendo aos atributos</span></div><div class="line">  <span class="comment">// que você usaria em template. Opcional.</span></div><div class="line">  &#123;</div><div class="line">    <span class="comment">// (veja detalhes na próxima seção, abaixo)</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// &#123;String | Array&#125;</span></div><div class="line">  <span class="comment">// VNodes filhos, mas usando `createElement()`,</span></div><div class="line">  <span class="comment">// ou apenas Strings para 'VNodes textuais'. Opcional.</span></div><div class="line">  [</div><div class="line">    <span class="string">'Algum texto vem primeiro.'</span>,</div><div class="line">    createElement(<span class="string">'h1'</span>, <span class="string">'Um título'</span>)</div><div class="line">    createElement(MyComponent, &#123;</div><div class="line">      <span class="attr">props</span>: &#123;</div><div class="line">        <span class="attr">someProp</span>: <span class="string">'foobar'</span></div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  ]</div><div class="line">)</div></pre></td></tr></table></figure>
 <h3 id="O-Objeto-de-Dados-em-Detalhes"><a href="#O-Objeto-de-Dados-em-Detalhes" class="headerlink" title="O Objeto de Dados em Detalhes"></a>O Objeto de Dados em Detalhes</h3><p>Importante observar: assim como <code>v-bind:class</code> e <code>v-bind:style</code> têm tratamento especial em <em>templates</em>, eles têm suas respectivas propriedades no primeiro nível de um objeto de dados VNode.</p>
@@ -847,7 +847,7 @@ console.error = function (error) {
     
       <div class="guide-links">
         
-          <span>← <a href="/v2/guide/transitioning-state.html">Transitioning State</a></span>
+          <span>← <a href="/v2/guide/transitioning-state.html">Transições nos Dados</a></span>
         
         
           <span style="float:right"><a href="/v2/guide/custom-directive.html">Diretivas Personalizadas</a> →</span>

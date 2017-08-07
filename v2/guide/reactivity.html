@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Reatividada em Profundidade — Vue.js</title>
+        <title>Reatividade em Profundidade — Vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,12 +16,12 @@
         <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/reactivity.html">
 
         <meta property="og:type" content="article">
-        <meta property="og:title" content="Reatividada em Profundidade — Vue.js">
+        <meta property="og:title" content="Reatividade em Profundidade — Vue.js">
         <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta property="og:image" content="https://br.vuejs.org//images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Reatividada em Profundidade — Vue.js">
+        <meta name="twitter:title" content="Reatividade em Profundidade — Vue.js">
         <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
 
@@ -367,7 +367,7 @@
         
         
         <li>
-            <a href="/v2/guide/reactivity.html" class="sidebar-link current">Reatividada em Profundidade</a>
+            <a href="/v2/guide/reactivity.html" class="sidebar-link current">Reatividade em Profundidade</a>
         </li>
     
         
@@ -391,7 +391,7 @@
         
         
         <li>
-            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transitioning State</a>
+            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições nos Dados</a>
         </li>
     
         
@@ -475,7 +475,7 @@
         
         
         <li>
-            <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+            <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
         </li>
     
         
@@ -499,7 +499,7 @@
         
         
         <li>
-            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
         </li>
     
         
@@ -511,7 +511,7 @@
         
         
         <li>
-            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderização Server-Side</a>
+            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
         </li>
     
         
@@ -523,7 +523,7 @@
         
         
         <li>
-            <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript Support</a>
+            <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
         </li>
     
         
@@ -628,10 +628,10 @@
       
     
     
-      <h1>Reatividada em Profundidade</h1>
+      <h1>Reatividade em Profundidade</h1>
     
     <p>Cobrimos a maioria das noções básicas - agora é hora de dar um mergulho profundo! Uma das características mais distintas do Vue é o sistema de reatividade não obstrutivo. Modelos são simplesmente objetos JavaScript. Quando você os modifica, a visualização é atualizada. Isso torna o gerenciamento de estado muito simples e intuitivo, mas também é importante entender como isso funciona para evitar algumas armadilhas comuns. Nesta seção, vamos cavar alguns dos detalhes de baixo nível do sistema de reatividade do Vue.</p>
-<h2 id="Como-as-Altercoes-sao-Monitoradas"><a href="#Como-as-Altercoes-sao-Monitoradas" class="headerlink" title="Como as Alterções são Monitoradas"></a>Como as Alterções são Monitoradas</h2><p>Quando você passa um objeto JavaScript simples para uma instância do Vue, como a opção <code>data</code>, o Vue irá percorrer todas as suas propriedades e convertê-las para getter/setters usando <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="external">Object.defineProperty</a>. Esta é uma característica un-shimmable encontrada somente a partir do ES5, razão pela qual o Vue não suporta o IE8 e versões anteriores.</p>
+<h2 id="Como-as-Alteracoes-sao-Monitoradas"><a href="#Como-as-Alteracoes-sao-Monitoradas" class="headerlink" title="Como as Alterações são Monitoradas"></a>Como as Alterações são Monitoradas</h2><p>Quando você passa um objeto JavaScript simples para uma instância do Vue, como a opção <code>data</code>, o Vue irá percorrer todas as suas propriedades e convertê-las para getter/setters usando <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="external">Object.defineProperty</a>. Esta é uma característica un-shimmable encontrada somente a partir do ES5, razão pela qual o Vue não suporta o IE8 e versões anteriores.</p>
 <p>Os getter/setters são invisíveis para o usuário, mas debaixo do capô, eles permitem ao Vue executar o rastreamento de dependência e notificações de alteração quando propriedades são acessadas ou modificadas. Uma ressalva é que consoles de browsers formatam getter/setters diferentemente quando alteram objetos de dados, então você pode querer instalar o <a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a>  para ter uma interface de inspeção mais amigável.</p>
 <p>Cada instância de componente tem um observador de instância, <strong>watcher</strong>, correspondente, que registra todas as propriedades “tocadas” durante a renderização do componente e depedências. Mais tarde, quando o setter de uma dependência é acionado, ele notifica o watcher que então faz com que o componente seja re-renderizado.</p>
 <p><img src="/images/data.png" alt="Reactivity Cycle"></p>

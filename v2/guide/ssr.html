@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Renderização Server-Side — Vue.js</title>
+        <title>Renderizando no Lado do Servidor — Vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,12 +16,12 @@
         <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/ssr.html">
 
         <meta property="og:type" content="article">
-        <meta property="og:title" content="Renderização Server-Side — Vue.js">
+        <meta property="og:title" content="Renderizando no Lado do Servidor — Vue.js">
         <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta property="og:image" content="https://br.vuejs.org//images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Renderização Server-Side — Vue.js">
+        <meta name="twitter:title" content="Renderizando no Lado do Servidor — Vue.js">
         <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
 
@@ -367,7 +367,7 @@
         
         
         <li>
-            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividada em Profundidade</a>
+            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
         </li>
     
         
@@ -391,7 +391,7 @@
         
         
         <li>
-            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transitioning State</a>
+            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições nos Dados</a>
         </li>
     
         
@@ -475,7 +475,7 @@
         
         
         <li>
-            <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+            <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
         </li>
     
         
@@ -499,7 +499,7 @@
         
         
         <li>
-            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
         </li>
     
         
@@ -511,7 +511,7 @@
         
         
         <li>
-            <a href="/v2/guide/ssr.html" class="sidebar-link current">Renderização Server-Side</a>
+            <a href="/v2/guide/ssr.html" class="sidebar-link current">Renderizando no Lado do Servidor</a>
         </li>
     
         
@@ -523,7 +523,7 @@
         
         
         <li>
-            <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript Support</a>
+            <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
         </li>
     
         
@@ -628,18 +628,18 @@
       
     
     
-      <h1>Renderização Server-Side</h1>
+      <h1>Renderizando no Lado do Servidor</h1>
     
-    <h2 id="Guia-Completo-de-SSR"><a href="#Guia-Completo-de-SSR" class="headerlink" title="Guia Completo de SSR"></a>Guia Completo de SSR</h2><p>Criamos um guia independente apenas sobre a criação de aplicações Vue renderizadas a partir do servidor. Este guia é bem aprofundado para aqueles que já estão familiarizados com o desenvolvimento <em>client-side</em> com Vue, desenvolvimento <em>server-side</em> com Node.js e utilização de Webpack. Confira em <a href="https://ssr.vuejs.org/" target="_blank" rel="external">ssr.vuejs.org</a>.</p>
-<h2 id="Nuxt-js"><a href="#Nuxt-js" class="headerlink" title="Nuxt.js"></a>Nuxt.js</h2><p>Configurar corretamente todos os aspectos de uma aplicação pronta para produção utilizando renderização pelo servidor pode ser uma tarefa árdua. Felizmente, existe um excelente projeto da comunidade que visa tornar tudo isso mais fácil: <a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt.js</a>. Nuxt.js é um <em>framework</em> de alto nível criado por cima do ecosistema Vue que fornece uma experiência extremamente simplificada para escrever aplicações universais. Melhor ainda, você pode utilizá-lo como um gerador de páginas estáticas (páginas geradas a partir de Componentes Single-File)! Nós recomendamos fortemente experimentá-lo.</p>
+    <h2 id="Guia-Completo-de-SSR"><a href="#Guia-Completo-de-SSR" class="headerlink" title="Guia Completo de SSR"></a>Guia Completo de SSR</h2><p>Renderização no lado do servidor, ou simplesmente SSR (do inglês <em>Server-Side Rendering</em>), é um tópico particularmente extenso. Criamos um guia independente apenas sobre a criação de aplicações Vue renderizadas a partir do servidor. Este guia é bem aprofundado para aqueles que já estão familiarizados com o desenvolvimento <em>client-side</em> com Vue, desenvolvimento <em>server-side</em> com Node.js e utilização de Webpack. Confira em <a href="https://ssr.vuejs.org/" target="_blank" rel="external">ssr.vuejs.org</a>.</p>
+<h2 id="Nuxt-js"><a href="#Nuxt-js" class="headerlink" title="Nuxt.js"></a>Nuxt.js</h2><p>Configurar corretamente todos os aspectos de uma aplicação pronta para produção utilizando renderização pelo servidor pode ser uma tarefa árdua. Felizmente, existe um excelente projeto da comunidade que visa tornar tudo isso mais fácil: <a href="https://nuxtjs.org/" target="_blank" rel="external">Nuxt.js</a>. Nuxt.js é um <em>framework</em> de alto nível criado por cima do ecosistema Vue que fornece uma experiência extremamente simplificada para escrever aplicações universais. Melhor ainda, você pode utilizá-lo como um gerador de páginas estáticas (páginas HTML geradas a partir de Componentes <em>Single-File</em>)! Nós recomendamos fortemente experimentá-lo.</p>
 
     
       <div class="guide-links">
         
-          <span>← <a href="/v2/guide/unit-testing.html">Unit Testing</a></span>
+          <span>← <a href="/v2/guide/unit-testing.html">Testes Unitários</a></span>
         
         
-          <span style="float:right"><a href="/v2/guide/typescript.html">TypeScript Support</a> →</span>
+          <span style="float:right"><a href="/v2/guide/typescript.html">Suporte ao TypeScript</a> →</span>
         
       </div>
     

@@ -367,7 +367,7 @@
         
         
         <li>
-            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividada em Profundidade</a>
+            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
         </li>
     
         
@@ -391,7 +391,7 @@
         
         
         <li>
-            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transitioning State</a>
+            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições nos Dados</a>
         </li>
     
         
@@ -475,7 +475,7 @@
         
         
         <li>
-            <a href="/v2/guide/routing.html" class="sidebar-link">Routing</a>
+            <a href="/v2/guide/routing.html" class="sidebar-link">Roteamento</a>
         </li>
     
         
@@ -499,7 +499,7 @@
         
         
         <li>
-            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
         </li>
     
         
@@ -511,7 +511,7 @@
         
         
         <li>
-            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderização Server-Side</a>
+            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
         </li>
     
         
@@ -523,7 +523,7 @@
         
         
         <li>
-            <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript Support</a>
+            <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
         </li>
     
         
@@ -639,31 +639,31 @@
 <li><strong>Sem processamento no build</strong>, ou seja, nos restringindo a HTML e JavaScript ES5, ao invés de preprocessadores como Pug (anteriormente Jade) e Babel</li>
 </ul>
 <p>Tudo isso é resolvido através dos <strong>Componentes Single-File</strong> com a extensão <code>.vue</code>, possibilitados graças a ferramentas de <em>build</em> como Webpack ou Browserify.</p>
-<p>Aqui está um simples exemplos de um arquivo que chamaremos de <code>Hello.vue</code>:</p>
+<p>Aqui está um simples exemplo de um arquivo que chamaremos de <code>Hello.vue</code>:</p>
 <p><img src="/images/vue-component.png" style="display: block; margin: 30px auto"></p>
 <p>Agora nós obtivemos:</p>
 <ul>
-<li><a href="https://github.com/vuejs/awesome-vue#syntax-highlighting" target="_blank" rel="external">Syntax highlighting completo</a></li>
+<li><a href="https://github.com/vuejs/awesome-vue#source-code-editing" target="_blank" rel="external">Syntax highlighting completo</a></li>
 <li><a href="https://webpack.github.io/docs/commonjs.html" target="_blank" rel="external">Modularização com CommonJS</a></li>
 <li><a href="https://github.com/vuejs/vue-loader/blob/master/docs/en/features/scoped-css.md" target="_blank" rel="external">Escopo de CSS por componente</a></li>
 </ul>
 <p>Como prometido, podemos também utilizar pré-processadores como Pug (Jade), Babel (com módulos ES2015+) e Stylus para componentes mais limpos e mais ricos em recursos.</p>
 <p><img src="/images/vue-component-with-preprocessors.png" style="display: block; margin: 30px auto"></p>
-<p>Estas linguagens específicas são meros exemplos. Poderíamos tão facilmente usar Buble, TypeScript, SCSS, PostCSS - ou qualquer outro que acreditarmos nos tornar mais produtivos.</p>
-<h3 id="What-About-Separation-of-Concerns"><a href="#What-About-Separation-of-Concerns" class="headerlink" title="What About Separation of Concerns?"></a>What About Separation of Concerns?</h3><p>One important thing to note is that <strong>separation of concerns is not equal to separation of file types.</strong> In modern UI development, we have found that instead of dividing the codebase into three huge layers that interweaves with one another, it makes much more sense to divide them into loosely-coupled components and compose them. Inside a component, its template, logic and styles are inherently coupled, and collocating them actually makes the component more cohesive and maintainable.</p>
-<p>Even if you don’t like the idea of Single-File Components, you can still leverage its hot-reloading and pre-compilation features by separating your JavaScript and CSS into separate files:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- my-component.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>This will be pre-compiled<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./my-component.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">src</span>=<span class="string">"./my-component.css"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="Primeiros-Passos"><a href="#Primeiros-Passos" class="headerlink" title="Primeiros Passos"></a>Primeiros Passos</h2><h3 id="Nao-Acostumado-a-Sistemas-de-Build"><a href="#Nao-Acostumado-a-Sistemas-de-Build" class="headerlink" title="Não Acostumado a Sistemas de Build"></a>Não Acostumado a Sistemas de Build</h3><p>Com componentes <code>.vue</code>, estamos entrando no reino das aplicações JavaScript avançadas. Significa aprender a utilizar algumas ferramentas adicionais se ainda não teve oportunidade:</p>
+<p>Estas linguagens específicas são meros exemplos. Poderíamos tão facilmente usar Buble, TypeScript, SCSS, PostCSS - ou qualquer outro que acreditarmos nos tornar mais produtivos. Se usar Webpack com <code>vue-loader</code>, também há suporte de primeira classe a CSS Modules.</p>
+<h3 id="E-a-Separacao-de-Responsabilidades"><a href="#E-a-Separacao-de-Responsabilidades" class="headerlink" title="E a Separação de Responsabilidades?"></a>E a Separação de Responsabilidades?</h3><p>Uma coisa importante a observar é que <strong>separação de responsabilidades não é igual a separação de tipos de arquivo</strong>. No desenvolvimento moderno de interfaces, chegamos à conclusão que, ao invés de dividir a base de código em três grandes camadas que se entrelaçam umas com as outras, faz muito mais sentido dividir em componentes fracamente acoplados e utilizá-los para composição. Dentro de um componente, seu <em>template</em>, sua lógica e seus estilos são inerentemente acoplados, e encará-los dessa forma realmente torna os componentes mais coesos e manuteníveis.</p>
+<p>Se mesmo assim não gostar da ideia de Componentes <em>Single-File</em>, você ainda pode tirar vantagem de seus recursos de <em>hot-reloading</em> (recompilação e atualização em tempo real ao salvar o código) e de pré-compilação, separando JavaScript e CSS em arquivos distintos:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- my-component.vue --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>Isso será pré-compilado<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./my-component.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">src</span>=<span class="string">"./my-component.css"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Primeiros-Passos"><a href="#Primeiros-Passos" class="headerlink" title="Primeiros Passos"></a>Primeiros Passos</h2><h3 id="Iniciante-em-Sistemas-de-Build"><a href="#Iniciante-em-Sistemas-de-Build" class="headerlink" title="Iniciante em Sistemas de Build"></a>Iniciante em Sistemas de Build</h3><p>Com componentes <code>.vue</code>, estamos entrando no reino das aplicações JavaScript avançadas. Significa aprender a utilizar algumas ferramentas adicionais se ainda não teve oportunidade:</p>
 <ul>
 <li><p><strong>Node Package Manager (NPM)</strong>: Leia o guia <a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank" rel="external">Getting Started</a> do NPM até a seção <em>10: Uninstalling global packages</em>.</p>
 </li>
-<li><p><strong>JavaScript moderno com ES2015/16</strong>: Leia o guia <a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">Learn ES2015</a> do Babel. Não é necessário memorizar cada recurso agora, mas mantenha esta página como referência.</p>
+<li><p><strong>JavaScript Moderno com ES2015+</strong>: Leia o guia <a href="https://babeljs.io/docs/learn-es2015/" target="_blank" rel="external">Learn ES2015</a> do Babel. Não é necessário memorizar cada recurso agora, mas mantenha esta página como referência.</p>
 </li>
 </ul>
-<p>Depois que tiver tirado um dia para mergulhar nestes tópicos, recomendamos que dê uma olhada no modelo de projeto <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a>. Seguindo as instruções, você terá em mãos um projeto Vue com componentes <code>.vue</code>, ES2015 e <code>hot-reloading</code> (recompilação e atualização em tempo real ao salvar o código), tudo rodando em pouquíssimo tempo!</p>
-<p>Este modelo de projeto utiliza o <a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a>, um “empacotador de módulos” (<em>module bundler</em>), que pega vários módulos (arquivos JavaScript diversos) e então os combina em uma aplicação final. Para aprender mais sobre o próprio Webpack, <a href="https://www.youtube.com/watch?v=WQue1AN93YU" target="_blank" rel="external">este vídeo</a> pode ser uma boa introdução. Depois que você passar do básico, talvez queira conferir este <a href="https://egghead.io/courses/using-webpack-for-production-javascript-applications" target="_blank" rel="external">curso avançado de Webpack em Egghead.io</a>.</p>
-<p>No Webpack, cada módulo pode ser transformado por um plugin “carregador” (<em>loader</em>) antes de ser incluído no pacote. Para isso, Vue oferece o plugin <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="external">vue-loader</a>, responsável por cuidar da transformação dos arquivos <code>.vue</code> em JavaScript carregável pelo empacotador. O modelo de projeto <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a> já possui tudo configurado para você, mas se estiver interessado em entender mais a fundo como os componentes <code>.vue</code> funcionam com o Webpack, sugerimos que leia a <a href="https://vue-loader.vuejs.org" target="_blank" rel="external">documentação do vue-loader</a>.</p>
-<h3 id="Usuario-Avancado-de-Sistemas-de-Build"><a href="#Usuario-Avancado-de-Sistemas-de-Build" class="headerlink" title="Usuário Avançado de Sistemas de Build"></a>Usuário Avançado de Sistemas de Build</h3><p>Independetemente de sua preferência por Webpack ou por Browserify, temos modelos de projeto documentados para ambos, tanto para projetos simples ou mais complexos. Recomendados que vasculhe o repositório <a href="https://github.com/vuejs-templates" target="_blank" rel="external">github.com/vuejs-templates</a>, escolhendo o <em>template</em> que considerar mais adequado para o seu caso, seguindo as instruções de cada README para gerar um novo projeto com ajuda da ferramenta <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">vue-cli</a>.</p>
+<p>Depois que tiver tirado um dia para mergulhar nestes tópicos, dê uma olhada no modelo de projeto <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a>. Seguindo as instruções, você terá em mãos um projeto Vue com componentes <code>.vue</code>, ES2015 e <em>hot-reloading</em>, rodando em pouquíssimo tempo!</p>
+<p>Este modelo de projeto utiliza o <a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a>, um “empacotador de módulos” (<em>module bundler</em>), que pega vários módulos (arquivos JavaScript diversos) e então os combina em uma aplicação final. Para aprender mais sobre o Webpack, <a href="https://www.youtube.com/watch?v=WQue1AN93YU" target="_blank" rel="external">este vídeo</a> (em inglês) pode ser uma boa introdução. Depois que você passar do básico, talvez queira conferir este <a href="https://egghead.io/courses/using-webpack-for-production-javascript-applications" target="_blank" rel="external">curso avançado de Webpack em Egghead.io</a> (também em inglês).</p>
+<p>No Webpack, cada módulo pode ser transformado por um <em>plugin</em> “carregador” (<em>loader</em>) antes de ser incluído no pacote. Para isso, Vue oferece o <em>plugin</em> <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="external">vue-loader</a>, responsável por cuidar da transformação dos arquivos <code>.vue</code> em JavaScript carregável pelo empacotador. O modelo de projeto <a href="https://github.com/vuejs-templates/webpack-simple" target="_blank" rel="external">webpack-simple</a> já possui tudo configurado para você, mas se estiver interessado em entender mais a fundo como os componentes <code>.vue</code> funcionam com o Webpack, sugerimos que leia a <a href="https://vue-loader.vuejs.org" target="_blank" rel="external">documentação do vue-loader</a>.</p>
+<h3 id="Para-Usuarios-Avancados"><a href="#Para-Usuarios-Avancados" class="headerlink" title="Para Usuários Avançados"></a>Para Usuários Avançados</h3><p>Independetemente de sua preferência por Webpack ou por Browserify, temos modelos de projeto documentados para ambos, tanto para projetos simples quanto para mais complexos. Recomendados que vasculhe o repositório <a href="https://github.com/vuejs-templates" target="_blank" rel="external">github.com/vuejs-templates</a>, escolhendo o <em>template</em> que considerar mais adequado para o seu caso, seguindo as instruções de cada README para gerar um novo projeto com ajuda da ferramenta <a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">vue-cli</a>.</p>
 
     
       <div class="guide-links">

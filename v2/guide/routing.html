@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Routing — Vue.js</title>
+        <title>Roteamento — Vue.js</title>
         <meta charset="utf-8">
         <meta name="description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,12 +16,12 @@
         <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/v2/guide/routing.html">
 
         <meta property="og:type" content="article">
-        <meta property="og:title" content="Routing — Vue.js">
+        <meta property="og:title" content="Roteamento — Vue.js">
         <meta property="og:description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta property="og:image" content="https://br.vuejs.org//images/logo.png">
 
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="Routing — Vue.js">
+        <meta name="twitter:title" content="Roteamento — Vue.js">
         <meta name="twitter:description" content="Vue.js - O Framework JavaScript Progressivo">
         <meta name="twitter:image" content="https://br.vuejs.org/images/logo.png">
 
@@ -367,7 +367,7 @@
         
         
         <li>
-            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividada em Profundidade</a>
+            <a href="/v2/guide/reactivity.html" class="sidebar-link">Reatividade em Profundidade</a>
         </li>
     
         
@@ -391,7 +391,7 @@
         
         
         <li>
-            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transitioning State</a>
+            <a href="/v2/guide/transitioning-state.html" class="sidebar-link">Transições nos Dados</a>
         </li>
     
         
@@ -475,7 +475,7 @@
         
         
         <li>
-            <a href="/v2/guide/routing.html" class="sidebar-link current">Routing</a>
+            <a href="/v2/guide/routing.html" class="sidebar-link current">Roteamento</a>
         </li>
     
         
@@ -499,7 +499,7 @@
         
         
         <li>
-            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Unit Testing</a>
+            <a href="/v2/guide/unit-testing.html" class="sidebar-link">Testes Unitários</a>
         </li>
     
         
@@ -511,7 +511,7 @@
         
         
         <li>
-            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderização Server-Side</a>
+            <a href="/v2/guide/ssr.html" class="sidebar-link">Renderizando no Lado do Servidor</a>
         </li>
     
         
@@ -523,7 +523,7 @@
         
         
         <li>
-            <a href="/v2/guide/typescript.html" class="sidebar-link">TypeScript Support</a>
+            <a href="/v2/guide/typescript.html" class="sidebar-link">Suporte ao TypeScript</a>
         </li>
     
         
@@ -628,13 +628,13 @@
       
     
     
-      <h1>Routing</h1>
+      <h1>Roteamento</h1>
     
-    <h2 id="Router-Oficial"><a href="#Router-Oficial" class="headerlink" title="Router Oficial"></a>Router Oficial</h2><p>Para a maioria das Single Page Applications, é recomendado usar a biblioteca oficialmente suportada <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router</a>. Para mais detalhes, veja a <a href="https://router.vuejs.org/" target="_blank" rel="external">documentação</a> do vue-router.</p>
-<h2 id="Criando-Rotas-Simples"><a href="#Criando-Rotas-Simples" class="headerlink" title="Criando Rotas Simples"></a>Criando Rotas Simples</h2><p>Se você precisa apenas de rotas muito simples e não deseja adicionar uma biblioteca completa de rotas, você pode renderizar componentes/páginas dinamicamente deste modo:</p>
+    <h2 id="Roteador-Oficial"><a href="#Roteador-Oficial" class="headerlink" title="Roteador Oficial"></a>Roteador Oficial</h2><p>Para a maioria das <em>Single Page Applications</em>, é recomendado usar a biblioteca oficialmente suportada <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router</a>. Para mais detalhes, veja a <a href="https://router.vuejs.org/" target="_blank" rel="external">documentação do vue-router</a>.</p>
+<h2 id="Roteamento-Simples-do-Zero"><a href="#Roteamento-Simples-do-Zero" class="headerlink" title="Roteamento Simples do Zero"></a>Roteamento Simples do Zero</h2><p>Se você precisa apenas de rotas muito simples e não deseja adicionar uma biblioteca completa de rotas, você pode renderizar componentes/páginas dinamicamente deste modo:</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> NotFound = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;Página não encontrada&lt;/p&gt;'</span> &#125;</div><div class="line"><span class="keyword">const</span> Home = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;Página Inicial&lt;/p&gt;'</span> &#125;</div><div class="line"><span class="keyword">const</span> About = &#123; <span class="attr">template</span>: <span class="string">'&lt;p&gt;Sobre&lt;/p&gt;'</span> &#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> routes = &#123;</div><div class="line">  <span class="string">'/'</span>: Home,</div><div class="line">  <span class="string">'/sobre'</span>: About</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">currentRoute</span>: <span class="built_in">window</span>.location.pathname</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">computed</span>: &#123;</div><div class="line">    ViewComponent () &#123;</div><div class="line">      <span class="keyword">return</span> routes[<span class="keyword">this</span>.currentRoute] || NotFound</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  render (h) &#123; <span class="keyword">return</span> h(<span class="keyword">this</span>.ViewComponent) &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>Combinado com a API de histórico do HTML5, você pode criar um router do lado do cliente muito básico, porém totalmente funcional. Para ver isso na prática, confira este <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example" target="_blank" rel="external">aplicativo de exemplo</a>.</p>
-<h2 id="Integracao-com-routers-de-terceiros"><a href="#Integracao-com-routers-de-terceiros" class="headerlink" title="Integração com routers de terceiros"></a>Integração com routers de terceiros</h2><p>Se há uma bliblioteca de terceiros para rotas que você prefira usar, como <a href="https://github.com/visionmedia/page.js" target="_blank" rel="external">Page.js</a> ou <a href="https://github.com/flatiron/director" target="_blank" rel="external">Director</a>, a integração é <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs" target="_blank" rel="external">igualmente fácil</a>. Aqui está um <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs" target="_blank" rel="external">exemplo completo</a> usando Page.js.</p>
+<p>Combinado com a API de histórico do HTML5, você pode criar um roteador do lado do cliente muito básico, porém totalmente funcional. Para ver isso na prática, confira <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example" target="_blank" rel="external">este exemplo</a>.</p>
+<h2 id="Integracao-com-Roteadores-de-Terceiros"><a href="#Integracao-com-Roteadores-de-Terceiros" class="headerlink" title="Integração com Roteadores de Terceiros"></a>Integração com Roteadores de Terceiros</h2><p>Se há uma bliblioteca de terceiros para rotas que você prefira usar, como <a href="https://github.com/visionmedia/page.js" target="_blank" rel="external">Page.js</a> ou <a href="https://github.com/flatiron/director" target="_blank" rel="external">Director</a>, a integração é <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/compare/master...pagejs" target="_blank" rel="external">igualmente fácil</a>. Aqui está um <a href="https://github.com/chrisvfritz/vue-2.0-simple-routing-example/tree/pagejs" target="_blank" rel="external">exemplo completo</a> usando Page.js.</p>
 
     
       <div class="guide-links">

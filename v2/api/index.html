@@ -1579,7 +1579,7 @@
 </li>
 </ul>
 <h2 id="Atributos-Especiais"><a href="#Atributos-Especiais" class="headerlink" title="Atributos Especiais"></a>Atributos Especiais</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><ul>
-<li><p><strong>Espera:</strong> <code>string</code></p>
+<li><p><strong>Espera:</strong> <code>number | string</code></p>
 <p>O atributo especial <code>key</code> é usado principalmente como um aviso para o algoritmo do virtual DOM do Vue identificar VNodes quando compara a nova lista de nós com a anterior. Sem <code>keys</code>, o Vue usa um algoritmo que minimiza a movimentação de elementos e tenta corrigir/reusar elementos do mesmo tipo no local tanto quanto possível. Com <code>keys</code>, ele irá reordenar os elementos baseado na ordem de mudança das <code>keys</code>, e elementos com <code>keys</code> que não estão mais presentes serão sempre removidos/destruídos.</p>
 <p>Componentes filhos com pai em comum precisam ter <strong>keys únicas</strong>. <code>keys</code> duplicadas causarão erros de renderização.</p>
 <p>O caso mais comum é combinado com o <code>v-for</code>:</p>
